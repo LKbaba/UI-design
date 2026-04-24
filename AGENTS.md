@@ -9,7 +9,7 @@
 
 ## 这个仓库是什么
 
-一个可以被任何编程智能体加载的 UI 设计 Skill。交付物：一份 `SKILL.md` + 7 份 `references/` + 2 份 `templates/` + 渐进加载映射 `load-manifest.json`。
+一个可以被任何编程智能体加载的 UI 设计 Skill。交付物：一份 `SKILL.md` + 13 份 `references/` + 2 份 `templates/` + 渐进加载映射 `load-manifest.json`。
 
 使用者通过 `git clone` 把整个仓库放到自己的 skills 目录（见 README），之后在任何项目里说"帮我设计 UI"就会触发本 Skill。
 
@@ -94,3 +94,7 @@ Codex 是 OpenAI 的自主编码 agent，通过 MCP 集成。
 | 修改排版/间距基线 | `references/typography-spacing.md` |
 | 修改渐进加载的路由 | `load-manifest.json` + `SKILL.md` 路由表 |
 | 修改使用者项目的设计契约模板 | `templates/DESIGN.md.template` |
+| 修改设计卓越/视觉层级指南 | `references/design-excellence.md` |
+| 修改色彩系统指南 | `references/color-system.md` |
+| 修改字体推荐指南 | `references/font-recommendations.md` |
+| 修改设计哲学/判断力框架 | `references/design-philosophy.md` |

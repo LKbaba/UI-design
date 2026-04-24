@@ -80,6 +80,10 @@ Codex 是 OpenAI 的自主编码 agent，通过 MCP 集成。
 | 修改排版/间距基线 | `references/typography-spacing.md` |
 | 修改渐进加载路由 | `load-manifest.json` + `SKILL.md` 路由表 |
 | 修改使用者项目的设计契约模板 | `templates/DESIGN.md.template` |
+| 修改设计卓越/视觉层级指南 | `references/design-excellence.md` |
+| 修改色彩系统指南 | `references/color-system.md` |
+| 修改字体推荐指南 | `references/font-recommendations.md` |
+| 修改设计哲学/判断力框架 | `references/design-philosophy.md` |
 
 ## Development Environment
 - OS: Windows 10.0.19045
