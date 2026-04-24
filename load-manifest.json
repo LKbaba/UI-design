@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "version": "0.1.0",
+  "description": "agent-ui-design Skill 渐进加载路由表。基础必载包总是加载；条件必载包在任务类型命中时加载。",
+
+  "defaults": {
+    "all-design-tasks": {
+      "group": "基础必载",
+      "reason": "all-design-tasks",
+      "references": [
+        "references/workflow.md",
+        "references/anti-slop.md",
+        "references/typography-spacing.md"
+      ],
+      "description": "任何设计任务启动前必载——工作流 + 反套路 + 排版间距基线"
+    }
+  },
+
+  "taskTypes": {
+    "discover-phase": {
+      "group": "条件命中后必载",
+      "reason": "before-discover",
+      "trigger": "新任务或需求不明确",
+      "references": [
+        "references/design-context.md"
+      ],
+      "description": "需求澄清阶段的问题清单"
+    },
+
+    "brand-tokens-baseline": {
+      "group": "条件命中后必载",
+      "reason": "brand-tokens-baseline",
+      "trigger": "用户提到品牌色 / 字体 / token / 设计系统",
+      "references": [
+        "references/brand-tokens-template.md"
+      ],
+      "templates": [
+        "templates/DESIGN.md.template"
+      ],
+      "description": "让用户填空建立项目级品牌 tokens"
+    },
+
+    "variant-exploration": {
+      "group": "条件命中后必载",
+      "reason": "before-variants",
+      "trigger": "需要多个设计方向 / 变体探索",
+      "references": [
+        "references/tweaks-system.md"
+      ],
+      "description": "用 Tweaks 面板在同一文件暴露多个变体"
+    }
+  },
+
+  "checkpoints": {
+    "before-build": {
+      "group": "条件命中后必载",
+      "reason": "before-build",
+      "trigger": "进入 build 阶段前",
+      "references": [
+        "references/typography-spacing.md",
+        "references/anti-slop.md",
+        "references/design-patterns.md",
+        "references/good-vs-bad.md"
+      ],
+      "description": "写代码之前加载排版基线 + 反套路 + 正面范例 + 好坏对比"
+    },
+
+    "before-animation": {
+      "group": "条件命中后必载",
+      "reason": "before-animation",
+      "trigger": "任务包含动效 / 微交互 / 转场",
+      "references": [
+        "references/verification-protocol.md"
+      ],
+      "description": "读动效硬规则（prefers-reduced-motion、总时长 ≤ 600ms 等）"
+    },
+
+    "before-delivery": {
+      "group": "条件命中后必载",
+      "reason": "before-delivery",
+      "trigger": "build 自认完成，交付前",
+      "references": [
+        "references/verification-protocol.md"
+      ],
+      "description": "三阶段自检（结构 / 视觉 / 设计卓越）"
+    },
+
+    "deep-review": {
+      "group": "条件命中后必载",
+      "reason": "deep-review",
+      "trigger": "用户要求评审 / 审计 / 打分",
+      "references": [
+        "references/anti-slop.md",
+        "references/good-vs-bad.md",
+        "references/typography-spacing.md",
+        "references/verification-protocol.md"
+      ],
+      "description": "深度评审整份读完核心 reference + 好坏对比"
+    }
+  },
+
+  "templates": {
+    "DESIGN.md": {
+      "path": "templates/DESIGN.md.template",
+      "copy_to": "./DESIGN.md",
+      "description": "使用者项目根目录的设计契约（discover 阶段产物）"
+    },
+    "AGENTS.md": {
+      "path": "templates/AGENTS.md.template",
+      "copy_to": "./AGENTS.md",
+      "description": "使用者项目根目录的 agent-neutral 入口（可选，首次建项目用）"
+    }
+  },
+
+  "routingNotes": [
+    "阶段 1 discover：加载 defaults + taskTypes.discover-phase",
+    "阶段 2 plan：基础包就够了，出 plan 等批准",
+    "阶段 3 build：加载 checkpoints.before-build（含 design-patterns + good-vs-bad）；有动效加 before-animation；多变体加 taskTypes.variant-exploration",
+    "阶段 4 verify：加载 checkpoints.before-delivery",
+    "加载前必须宣告：Load: because=<reason> loaded=<paths>",
+    "已在上下文说：already_loaded=<paths>"
+  ]
+}

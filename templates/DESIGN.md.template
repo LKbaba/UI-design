@@ -1,0 +1,138 @@
+# DESIGN.md — {{PROJECT_NAME}}
+
+> 本文件是需求到实现的交接契约（single source of truth）。由 discover 阶段建立，后续所有阶段以此为准。
+
+---
+
+## 项目概要
+
+| 字段 | 值 |
+|------|-----|
+| 项目名称 | {{PROJECT_NAME}} |
+| 创建日期 | {{DATE}} |
+| 版本 | v1 |
+| 当前阶段 | discover |
+
+---
+
+## 受众
+
+- **主要用户**：{{PRIMARY_USER}}
+- **技术水平**：{{TECH_LEVEL}}
+- **使用场景**：{{USE_CASE}}
+
+---
+
+## 输出形状
+
+- **类型**：{{OUTPUT_TYPE}} <!-- 页面 / section / 组件 / 原型 / 评审 / 动效 -->
+- **范围**：{{SCOPE}} <!-- 仅桌面 / 仅移动 / 全响应式 -->
+- **页面/视图数量**：{{PAGE_COUNT}}
+
+---
+
+## 技术栈
+
+| 项目 | 版本 |
+|------|------|
+| 框架 | {{FRAMEWORK}} |
+| 样式方案 | {{STYLING}} |
+| 组件库 | {{COMPONENT_LIB}} |
+| 构建工具 | {{BUILD_TOOL}} |
+
+---
+
+## 品牌 Tokens
+
+### 颜色
+
+| Token | HEX | 用途 |
+|-------|-----|------|
+| brand-primary | {{COLOR_PRIMARY}} | 主品牌色 |
+| brand-secondary | {{COLOR_SECONDARY}} | 辅助色 |
+| bg-primary | {{BG_PRIMARY}} | 主背景 |
+| bg-secondary | {{BG_SECONDARY}} | 次要背景 |
+| text-primary | {{TEXT_PRIMARY}} | 主文字 |
+| text-secondary | {{TEXT_SECONDARY}} | 次要文字 |
+| text-muted | {{TEXT_MUTED}} | 弱化文字 |
+| border-default | {{BORDER_DEFAULT}} | 默认边框 |
+
+### 字体
+
+| 用途 | 字体族 |
+|------|--------|
+| 标题 | {{FONT_HEADING}} |
+| 正文 | {{FONT_BODY}} |
+| 代码 | {{FONT_CODE}} |
+
+### 风格偏好
+
+- **间距**：{{SPACING_PREF}} <!-- 紧凑 / 标准 / 宽松 -->
+- **圆角**：{{BORDER_RADIUS}} <!-- 0px / 4px / 8px / 12px / pill -->
+- **阴影**：{{SHADOW_STYLE}} <!-- 无 / 微妙 / 明显 / 品牌色 -->
+- **暗色模式**：{{DARK_MODE}} <!-- 需要 / 不需要 / 以后再说 -->
+- **动效**：{{MOTION_PREF}} <!-- 最少 / 适度 / 丰富 -->
+
+---
+
+## 硬约束
+
+<!-- 列出不可违反的约束 -->
+
+- {{CONSTRAINT_1}}
+- {{CONSTRAINT_2}}
+- {{CONSTRAINT_3}}
+
+---
+
+## 参考源
+
+<!-- 列出所有可参考的设计来源 -->
+
+| 类型 | 来源 | 备注 |
+|------|------|------|
+| {{REF_TYPE}} | {{REF_SOURCE}} | {{REF_NOTE}} |
+
+---
+
+## 信息架构
+
+<!-- 列出页面的 section 和优先级 -->
+
+| 顺序 | Section | 目标 | 优先级 |
+|------|---------|------|--------|
+| 1 | {{SECTION_1}} | {{GOAL_1}} | {{PRIORITY_1}} |
+| 2 | {{SECTION_2}} | {{GOAL_2}} | {{PRIORITY_2}} |
+| 3 | {{SECTION_3}} | {{GOAL_3}} | {{PRIORITY_3}} |
+
+**核心 CTA**：{{CORE_CTA}}
+
+---
+
+## 验收标准
+
+- [ ] {{ACCEPTANCE_1}}
+- [ ] {{ACCEPTANCE_2}}
+- [ ] {{ACCEPTANCE_3}}
+- [ ] 响应式：375px / 768px / 1440px 三个宽度无异常
+- [ ] 对比度：正文对主背景 ≥ 4.5:1
+- [ ] 无编造数据
+- [ ] 无浏览器控制台报错
+
+---
+
+## 假设记录
+
+<!-- discover 阶段未确认的项目，标为 ASSUMPTION -->
+
+| 假设 | 原因 | 状态 |
+|------|------|------|
+| ASSUMPTION: {{ASSUMPTION_1}} | {{REASON_1}} | 待确认 |
+
+---
+
+## 变更日志
+
+| 版本 | 日期 | 变更内容 |
+|------|------|---------|
+| v1 | {{DATE}} | 初始建立 |

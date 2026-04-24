@@ -1,0 +1,72 @@
+# AGENTS.md — {{PROJECT_NAME}}
+
+> 本文件是 agent-neutral 的项目约定，面向在这个仓库里工作的编程智能体（Claude Code / Codex / Cursor / Aider 等）。人类开发者也可以读。
+
+---
+
+## 项目概要
+
+- **项目名称**：{{PROJECT_NAME}}
+- **技术栈**：{{TECH_STACK}}
+- **设计契约**：所有 UI 相关的设计决策以 `DESIGN.md` 为准
+- **品牌 Tokens**：颜色、字体、间距等从 `DESIGN.md` 的"品牌 Tokens"章节读取，不自行编造
+
+---
+
+## 开发约定
+
+### 文件命名
+
+- 组件文件：PascalCase（如 `HeroSection.tsx`、`PricingCard.vue`）
+- 工具/hook 文件：camelCase（如 `useTweaks.ts`、`formatPrice.ts`）
+- 样式文件：与组件同名（如 `HeroSection.module.css`）
+- 文件名必须描述性（`FinalCTA.tsx`，不是 `section1.tsx`）
+
+### 样式
+
+- 颜色只用 `DESIGN.md` 定义的 tokens
+- 间距只用 `4·8·12·16·24·32·48·64·96·128` 刻度
+- 字重最多 3 个（400 / 600 / 700）
+- 图标库统一选一套（Lucide / Heroicons / Radix Icons），不混搭
+
+### 内容
+
+- 无真实内容 → 用灰色占位块 + "待替换"标注
+- 不编造 logo、评价、指标、团队成员
+- 文案从用户处获取，不自行撰写营销文案
+
+### 响应式
+
+- 必须检查：375px（手机）、768px（平板）、1440px（桌面）
+- 移动端触控目标 ≥ 44px
+- 移动端正文 ≥ 16px
+
+### 无障碍
+
+- 正文对比度 ≥ 4.5:1（WCAG AA）
+- 动效尊重 `prefers-reduced-motion`
+- 图片有 alt 属性
+- 可聚焦元素有 focus 样式
+
+---
+
+## 工作流
+
+UI 设计任务走四阶段：**discover → plan → build → verify**。
+
+1. **discover**：澄清需求，填写 `DESIGN.md`
+2. **plan**：出可见计划，等用户批准
+3. **build**：写代码，半程汇报
+4. **verify**：三阶段自检（结构 / 视觉 / 设计卓越）
+
+详见安装的 `agent-ui-design` Skill。
+
+---
+
+## 关键文件
+
+| 文件 | 用途 |
+|------|------|
+| `DESIGN.md` | 设计契约（single source of truth） |
+| `AGENTS.md` | 本文件——agent 约定 |
+| `package.json` | 实际依赖（不要凭记忆猜版本） |
